@@ -6,4 +6,14 @@
   --color-windows-dark-gray: #818181;
   --color-windows-light-gray: #C3C3C3;
   --color-windows-pink: #FF0081;
+  
+}
+
+@font-face {
+  font-family: "windows";
+  src: url("/fonts/windows-regular.ttf");
+}
+
+*{
+  font-family: windows, 'Courier New', Courier, monospace;
 }
