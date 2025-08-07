@@ -1,18 +1,18 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
-
-// Redirection mobile
-if (Astro.request.headers.get('user-agent')) {
-  const ua = Astro.request.headers.get('user-agent') || '';
-  const isMobile = /Mobile|Android|iP(hone|od|ad)/i.test(ua);
-  
-  if (isMobile) {
-    return Astro.redirect('/mobile');
-  }
-}
 ---
 
 <MainLayout title="Marjorie SIAD">
 <p>Main</p>
+
+<script>
+  // Redirection mobile côté client
+  const ua = navigator.userAgent;
+  const isMobile = /Mobile|Android|iP(hone|od|ad)/i.test(ua);
+  
+  if (isMobile) {
+    window.location.href = '/mobile';
+  }
+</script>
 
 </MainLayout>

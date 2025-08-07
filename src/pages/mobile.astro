@@ -1,18 +1,18 @@
 ---
 import MobileLayout from "../layouts/MobileLayout.astro"
-
-// Redirection desktop
-if (Astro.request.headers.get('user-agent')) {
-  const ua = Astro.request.headers.get('user-agent') || '';
-  const isMobile = /Mobile|Android|iP(hone|od|ad)/i.test(ua);
-  
-  if (!isMobile) {
-    return Astro.redirect('/');
-  }
-}
 ---
 
 <MobileLayout title="Erreur Mobile">
+    <script>
+      // Redirection desktop côté client
+      const ua = navigator.userAgent;
+      const isMobile = /Mobile|Android|iP(hone|od|ad)/i.test(ua);
+      
+      if (!isMobile) {
+        window.location.href = '/';
+      }
+    </script>
+    
     <main class="w-full max-w-xl p-6 font-mono text-[clamp(12px,4vw,18px)] leading-relaxed select-none">
       <div class="flex flex-col items-center gap-2 mb-8">
         <span class="px-4 py-1 bg-windows-dark-gray text-lg font-bold tracking-widest">Windows</span>
