@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  --color-windows-teal: #008080;
+  --color-windows-blue: #010081;
+  --color-windows-dark-gray: #818181;
+  --color-windows-light-gray: #C3C3C3;
+  --color-windows-pink: #FF0081;
+}
