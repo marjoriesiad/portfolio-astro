@@ -108,7 +108,7 @@ onBeforeUnmount(() => {
     <div class="flex-1">
       <nav class="flex flex-col p-3 text-lg">
         <a href="" class="flex items-center">
-          <img src="/public/icons/help-book.png" alt="" class="w-12" />
+          <img src="/icons/help-book.png" alt="" class="w-12" />
           À Propos
         </a>
         <div class="h-0.5 w-5/6 bg-white shadow-[0_2px_0_0_#808080] mx-2"></div>
@@ -121,7 +121,7 @@ onBeforeUnmount(() => {
         >
           <div class="flex items-center w-full justify-between select-none">
             <div class="flex items-center">
-              <img src="/public/icons/directory-open.png" alt="" class="w-12" />
+              <img src="/icons/directory-open.png" alt="" class="w-12" />
               Projets
             </div>
             <span>&gt;</span>
@@ -155,7 +155,7 @@ onBeforeUnmount(() => {
         </div>
 
         <a href="" class="flex items-center gap-2">
-          <img src="/public/icons//outlook.png" alt="" class="w-8 ml-2" />
+          <img src="/icons//outlook.png" alt="" class="w-8 ml-2" />
           Contact
         </a>
       </nav>
