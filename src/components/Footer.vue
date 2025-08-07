@@ -19,4 +19,23 @@ const getTime = `${hours} : ${minutes}`;
       {{getTime}}
     </div>
   </div>
+
+
+  <div class="w-70 h-96 bg-windows-light-gray border-2 border-white border-b-windows-dark-gray border-r-windows-dark-gray fixed bottom-15 left-1 hidden">
+  <!-- Colonne 1 : barre bleue verticale -->
+<div class="bg-windows-blue flex items-end pb-3 justify-center w-10">
+<span class="[writing-mode:vertical-rl] [text-orientation:sideways] text-white font-bold text-lg mt-2 rotate-180">Windows 98</span>
+</div>
+
+
+  <!-- Colonne 2 : liens -->
+  <div class="flex-1">
+    <nav class="flex flex-col gap-3 p-4">
+      <a href="">Lien 1</a>
+      <a href="">Lien 2</a>
+      <a href="">Lien 3</a>
+    </nav>
+  </div>
+</div>
+
 </template>
