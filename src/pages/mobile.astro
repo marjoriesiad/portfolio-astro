@@ -1,0 +1,51 @@
+---
+import MobileLayout from "../layouts/MobileLayout.astro"
+---
+
+<MobileLayout title="Erreur Mobile">
+---
+---
+    <main class="w-full max-w-xl p-6 font-mono text-[clamp(12px,4vw,18px)] leading-relaxed select-none">
+      <div class="flex flex-col items-center gap-2 mb-8">
+        <span class="px-4 py-1 bg-windows-dark-gray text-lg font-bold tracking-widest">Windows</span>
+      </div>
+      <p class="mb-5">Une erreur s'est produite. Pour continuer :</p>
+      <ul class="mb-5 pl-6 list-disc">
+        <li>
+          Appuyez sur Entrée pour retourner à Windows,
+          <span class="italic text-gray-200/70">(fonctionnalité non disponible sur mobile)</span>
+        </li>
+        <li>
+          Appuyez sur CTRL+ALT+SUPPR pour redémarrer votre appareil,
+          <br>
+          <span class="italic text-gray-200/70">ou essayez avec un vrai ordinateur.</span>
+        </li>
+      </ul>
+      <p class="mb-5">
+        <span class="block">Ce site web n'est <b>pas disponible</b> sur mobile.</span>
+        <span class="block mt-2">Veuillez utiliser un ordinateur pour accéder à l'expérience complète.</span>
+      </p>
+      <div class="mb-8">
+        <span class="block">Error: <span class="font-bold">0E : 016F : BFF9B3D4</span></span>
+        <span class="block text-gray-200/70 text-xs mt-1">mobile_not_supported_exception</span>
+      </div>
+      <div class="animate-pulse">
+        <span class="border border-white px-2 py-1 rounded">
+          Appuyez sur une touche pour continuer <span class="animate-blink">_</span>
+        </span>
+      </div>
+      <style>
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+        .animate-blink {
+          animation: blink 1s infinite steps(1);
+        }
+        .font-mono {
+          font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Courier New', monospace;
+          letter-spacing: 0.01em;
+        }
+      </style>
+    </main>
+</MobileLayout>
