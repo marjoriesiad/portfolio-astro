@@ -132,15 +132,25 @@ _sfc_main.setup = (props, ctx) => {
 };
 const Footer = /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]]);
 
-const $$Astro = createAstro();
+const $$Astro$1 = createAstro();
 const $$MainLayout = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$MainLayout;
   const { title } = Astro2.props;
   return renderTemplate`<html lang="fr"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>${title}</title>${renderHead()}</head> <body class="bg-windows-teal"> ${renderSlot($$result, $$slots["default"])} ${renderComponent($$result, "Footer", Footer, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/Users/marjorie/Desktop/Projets/portfolio/src/components/Footer.vue", "client:component-export": "default" })} </body></html>`;
 }, "/Users/marjorie/Desktop/Projets/portfolio/src/layouts/MainLayout.astro", void 0);
 
+const $$Astro = createAstro();
 const $$Index = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$Index;
+  if (Astro2.request.headers.get("user-agent")) {
+    const ua = Astro2.request.headers.get("user-agent") || "";
+    const isMobile = /Mobile|Android|iP(hone|od|ad)/i.test(ua);
+    if (isMobile) {
+      return Astro2.redirect("/mobile");
+    }
+  }
   return renderTemplate`${renderComponent($$result, "MainLayout", $$MainLayout, { "title": "Marjorie SIAD" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<p>Main</p> ` })}`;
 }, "/Users/marjorie/Desktop/Projets/portfolio/src/pages/index.astro", void 0);
 

@@ -1,5 +1,15 @@
 ---
 import MobileLayout from "../layouts/MobileLayout.astro"
+
+// Redirection desktop
+if (Astro.request.headers.get('user-agent')) {
+  const ua = Astro.request.headers.get('user-agent') || '';
+  const isMobile = /Mobile|Android|iP(hone|od|ad)/i.test(ua);
+  
+  if (!isMobile) {
+    return Astro.redirect('/');
+  }
+}
 ---
 
 <MobileLayout title="Erreur Mobile">

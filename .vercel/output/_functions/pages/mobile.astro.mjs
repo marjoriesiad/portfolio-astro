@@ -5,15 +5,25 @@ import 'clsx';
 /* empty css                                  */
 export { renderers } from '../renderers.mjs';
 
-const $$Astro = createAstro();
+const $$Astro$1 = createAstro();
 const $$MobileLayout = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$MobileLayout;
   const { title } = Astro2.props;
   return renderTemplate`<html lang="fr"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>${title}</title>${renderHead()}</head> <body class="bg-windows-blue text-white min-h-screen flex items-center justify-center"> ${renderSlot($$result, $$slots["default"])} </body></html>`;
 }, "/Users/marjorie/Desktop/Projets/portfolio/src/layouts/MobileLayout.astro", void 0);
 
+const $$Astro = createAstro();
 const $$Mobile = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$Mobile;
+  if (Astro2.request.headers.get("user-agent")) {
+    const ua = Astro2.request.headers.get("user-agent") || "";
+    const isMobile = /Mobile|Android|iP(hone|od|ad)/i.test(ua);
+    if (!isMobile) {
+      return Astro2.redirect("/");
+    }
+  }
   return renderTemplate`${renderComponent($$result, "MobileLayout", $$MobileLayout, { "title": "Erreur Mobile", "data-astro-cid-tzi6dhhv": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="w-full max-w-xl p-6 font-mono text-[clamp(12px,4vw,18px)] leading-relaxed select-none" data-astro-cid-tzi6dhhv> <div class="flex flex-col items-center gap-2 mb-8" data-astro-cid-tzi6dhhv> <span class="px-4 py-1 bg-windows-dark-gray text-lg font-bold tracking-widest" data-astro-cid-tzi6dhhv>Windows</span> </div> <p class="mb-5" data-astro-cid-tzi6dhhv>Une erreur s'est produite. Pour continuer :</p> <ul class="mb-5 pl-6 list-disc" data-astro-cid-tzi6dhhv> <li data-astro-cid-tzi6dhhv>
 Appuyez sur Entrée pour retourner à Windows,
 <span class="italic text-gray-200/70" data-astro-cid-tzi6dhhv>(fonctionnalité non disponible sur mobile)</span> </li> <li data-astro-cid-tzi6dhhv>
